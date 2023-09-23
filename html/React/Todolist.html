@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            ul li{
+                border:1px solid;
+                margin:0px;
+                padding:5px
+            }
+        </style>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="ds"></div>
+    </body>
+    <script type="text/babel">
+        var Todolist=(()=>{
+            var [todos,setTodos]=React.useState([
+                {
+                    
+                    title:"5 start",
+                    status:"true"
+                },
+                {
+                    title:"dairy milk",
+                    status:"true"
+                },
+                {
+                    title:"chacobar",
+                    status:"false"
+                }  
+                
+            ])
+            function addtodo(){
+                var n=document.getElementById("ty").value
+                setTodos([...todos,n])
+            }
+            function del (i){
+                var df=[...todos]
+                df.splice(i,1)
+                setTodos([...df])
+            }
+            return (
+                <div>
+                    <h1>Todolist</h1>
+                    <input type="text" id="ty"/>
+                    <button onClick={addtodo}>Add todo</button>
+                   <ul> {
+                    todos.map((t,i)=>{
+                        return <li style={t.status=="true"?{backgroundColor:"red"}:{backgroundColor:"green"}}>{t.title}
+                            <button onClick={()=>{del(i)}}>delete</button>   
+                            </li>
+                    })
+                }</ul></div>
+            )
+        })
+        ReactDOM.render(<Todolist></Todolist>,document.getElementById("ds"))
+
+    </script>
+</html>
+    

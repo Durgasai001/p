@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    </head>
+    <body>
+        <div id="sd"></div>
+    </body>
+    <script type="text/babel">
+      var Josh=(()=>{
+     var [k,setK]=React.useState(['sai',"ashu"])
+     function abc(){
+       var H= document.getElementById("cv").value
+       setK([...k,H])
+     }
+     return(<div>
+            <input type="text" id="cv"/>
+           <button onClick={abc}>add</button>
+        {
+         k.sort((a,b)=>{return a>b?1:-1}).map((k)=>{
+             return <h1>{k}</h1>
+         })
+     }</div>)
+    })
+    ReactDOM.render(<Josh/>, document.getElementById("sd")) 
+        
+    </script>
+</html>

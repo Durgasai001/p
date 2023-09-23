@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div id="ds"></div>
+    </body>
+    <script type="text/babel">
+        var Vacation=(()=>{
+            var[tour,setTour]=React.useState([])
+            React.useEffect(()=>{
+                axios.get('https://course-api.com/react-tours-project').then((res)=>{
+                    setTour([...res.data])
+                })
+            },[])
+            return(
+                <div>
+                    <h1>Tour</h1>
+                    
+                     
+                </div>
+            )
+            })
+            ReactDOM.render(<Vacation/>, document.getElementById("ds"))
+    </script>
+
+</html>

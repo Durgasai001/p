@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            .mybox{
+                padding:10px;
+                margin:1px;
+                border:1px solid;
+            }
+        </style>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    </head>
+    <body>
+        <div id="ds"></div>
+    </body>
+    <script type="text/babel">
+        var Counter=((props)=>{
+            var[count,setCount]=React.useState(props.x)
+        function inc(){
+            setCount(count+props.y)
+        }
+        function dec(){
+            setCount(count-props.y)
+        }
+        return (
+            <div>
+                <h1>Counter:{count}</h1>
+                <button onClick={inc}>increment</button>
+                <button onClick={dec}>decrement</button>
+            </div>
+        )
+        })
+        function App(){
+            return (
+                <div className="mybox">
+                <Counter x={10} y={5}/>
+                <Counter x={100} y={50}/>
+                </div>
+            )
+        }
+       
+        
+        ReactDOM.render(<App/>,document.getElementById("ds"))
+
+           
+
+    </script>
+</html>

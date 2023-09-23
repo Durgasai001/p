@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="kl"></div>
+    </body>
+    <script type="text/babel">
+        function abc(e){
+            document.getElementById("op").innerHTML=e.target.value
+        }
+        var c=<div>
+            <select onChange={abc} name="country">
+                <option value="ind">india</option>
+                <option value="sri">srilanka</option>
+                <option value="aus">australia</option>
+                <h1 id="op"></h1>
+            </select>
+            </div>
+            ReactDOM.render(c,document.getElementById("kl"))
+    </script>
+</html>

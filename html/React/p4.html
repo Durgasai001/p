@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    </head>
+    <body>
+        <div id="sd"></div>
+    </body>
+    <script type="text/babel">
+        //Display each array element in flex boxes
+       var ar=[12,3,4,5,6]
+       var X=<div style={{display:"flex"}}>{
+        ar.map((a)=>{
+            return <div style={{border:'1px solid',margin:'10px',padding:'10px'}}>{a}</div>
+        })
+       }</div>
+        ReactDOM.render(X,document.getElementById("sd"))
+        //  Display each string of array in flex boxes
+        var ar=["sai","ravi","tej"]
+       var X=<div style={{display:"flex"}}>{
+        ar.map((a)=>{
+            return <div style={{border:'1px solid',margin:'10px',padding:'10px'}}>{a}</div>
+        })
+       }</div>
+        ReactDOM.render(X,document.getElementById("sd"))
+        //  Display each object properties
+        var obj=[
+            {
+                name:'sai',
+                age:'22',
+                gender:'male'
+            }
+        ]
+        var Y=<div >{
+            obj.map((a)=>{
+                return <div style={{border:"1px solid"}}>
+                  <h1>Name:  {a.name}</h1>
+                <h2>  Age:  {a.age}</h2>
+                  <h3>Gender:{a.gender}</h3>
+                    </div>
+            })
+        }</div>
+        ReactDOM.render(Y,document.getElementById("sd"))
+        //  Display each array object in flex boxes
+        var obj=[
+            {
+                name:'sai',
+                age:'22',
+                gender:'male'
+            },
+            {
+                name:'ravi',
+                age:'22',
+                gender:'male'
+            },
+            {
+                name:'anu',
+                age:'22',
+                gender:'female'
+            },
+            {
+                name:'sam',
+                age:'22',
+                gender:'female'
+            },
+        ]
+        var Z=<div style={{display:"flex" }}>{
+            obj.map((a)=>{
+                return <div style={{border:"1px solid",padding:"10px",margin:"10px"}}>
+                    <div style={a.gender==='male'?{backgroundColor:'lightblue'}:{backgroundColor:'pink'}}>
+                   <h1>Name: {a.name}</h1>
+                   <h2>Name: {a.age}</h2>
+                   <h1>Gender: {a.gender}</h1>
+                    </div>
+            })
+        }</div>
+        ReactDOM.render(Z, document.getElementById("sd"))
+    </script>
+</html>
